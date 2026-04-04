@@ -1,0 +1,108 @@
+/* ══════════════════════════════════════════
+   ThinkFast — Shared Nav Component
+   Used by: index.html + all games/*.html
+   ══════════════════════════════════════════ */
+
+.tf-nav {
+  width: 100%;
+  background: rgba(10,13,26,0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.tf-nav-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ── Brand ── */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.nav-logo {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--indigo), #8b5cf6);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(99,102,241,0.45);
+}
+.nav-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Breadcrumb (game pages) ── */
+.nav-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.nav-breadcrumb-sep { color: #1e293b; }
+.nav-breadcrumb-page {
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Centre links (home only, desktop) ── */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-link:hover { color: #94a3b8; }
+
+/* ── Right-side tag/badge ── */
+.nav-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (min-width: 640px) {
+  .tf-nav-inner  { padding: 18px 32px; }
+  .nav-links { display: flex; }
+}
+@media (min-width: 1024px) {
+  .tf-nav-inner  { padding: 18px 48px; }
+}
+@media (max-width: 480px) {
+  .tf-nav-inner  { padding: 14px 16px; }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0a0d1a"/>
+  <title>ThinkFast — Train Your Brain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/base.css"/>
+  <link rel="stylesheet" href="assets/css/nav.css"/>
+  <link rel="stylesheet" href="assets/css/home.css"/>
+</head>
+<body>
+
+<div id="home-view">
+
+  <!-- ── Nav ── -->
+  <nav class="tf-nav">
+    <div class="tf-nav-inner">
+      <a class="nav-brand" href="index.html">
+        <div class="nav-logo">⚡</div>
+        <span class="nav-name">ThinkFast</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="#">Games</a>
+        <a class="nav-link" href="#">How it works</a>
+        <a class="nav-link" href="#">About</a>
+      </nav>
+      <span class="nav-tag">Beta</span>
+    </div>
+  </nav>
+
+  <!-- ── Content ── -->
+  <div class="home-container">
+
+    <!-- Hero -->
+    <div class="home-hero">
+      <div class="hero-eyebrow">Train your brain · Beat the clock</div>
+      <h1 class="hero-headline">Think faster.<br><em>Score higher.</em></h1>
+      <p class="hero-tagline">Bite-sized mental games designed to sharpen your speed, logic, and pattern recognition.</p>
+      <div class="hero-cta-row">
+        <button class="hero-cta-btn" id="hero-play-btn">⚡ Play Pattern Pulse</button>
+        <button class="hero-cta-ghost">Learn more ↓</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-val">8</span>
+          <span class="stat-lbl">Pattern Types</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-val">3</span>
+          <span class="stat-lbl">Difficulty Tiers</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-val">10s</span>
+          <span class="stat-lbl">Per Question</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Games section -->
+    <div class="section-header">
+      <span class="section-title">Games</span>
+      <span class="section-count">1 live · 3 coming soon</span>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="carousel" id="games-carousel">
+
+        <!-- Pattern Pulse — LIVE -->
+        <div class="game-card gc-pulse" id="card-pulse">
+          <div class="card-top">
+            <span class="card-icon">⚡</span>
+            <span class="card-status status-live">Live</span>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Pattern Pulse</div>
+            <div class="card-desc">Spot the missing number in fast-moving sequences before the clock hits zero.</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-meta">
+              <span class="meta-chip">Numbers</span>
+              <span class="meta-chip">10s</span>
+              <span class="card-best" id="home-best-chip">🏆 <span id="home-best">—</span></span>
+            </div>
+            <button class="card-play-btn">Play ›</button>
+          </div>
+        </div>
+
+        <!-- Reflex Rush — Coming Soon -->
+        <div class="game-card gc-reflex">
+          <div class="card-top">
+            <span class="card-icon">🎯</span>
+            <span class="card-status status-soon">Soon</span>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Reflex Rush</div>
+            <div class="card-desc">Tap the correct target the instant it appears. Pure reaction speed.</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-meta">
+              <span class="meta-chip">Reaction</span>
+              <span class="meta-chip">Tap</span>
+            </div>
+            <span class="locked-btn">🔒 Locked</span>
+          </div>
+        </div>
+
+        <!-- Logic Lock — Coming Soon -->
+        <div class="game-card gc-logic">
+          <div class="card-top">
+            <span class="card-icon">🧩</span>
+            <span class="card-status status-soon">Soon</span>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Logic Lock</div>
+            <div class="card-desc">Break the code using deductive reasoning under pressure.</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-meta">
+              <span class="meta-chip">Logic</span>
+              <span class="meta-chip">Deduction</span>
+            </div>
+            <span class="locked-btn">🔒 Locked</span>
+          </div>
+        </div>
+
+        <!-- Memory Grid — Coming Soon -->
+        <div class="game-card gc-memory">
+          <div class="card-top">
+            <span class="card-icon">🧠</span>
+            <span class="card-status status-soon">Soon</span>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Memory Grid</div>
+            <div class="card-desc">Memorise an expanding grid of items and recall them perfectly.</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-meta">
+              <span class="meta-chip">Memory</span>
+              <span class="meta-chip">Grid</span>
+            </div>
+            <span class="locked-btn">🔒 Locked</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
+
+    <!-- Feature strip -->
+    <div class="feature-strip">
+      <div class="feat">
+        <span class="feat-icon">📈</span>
+        <div class="feat-title">Adaptive<br>Difficulty</div>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🏆</span>
+        <div class="feat-title">Personal<br>Best Tracking</div>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🔗</span>
+        <div class="feat-title">One-tap<br>Sharing</div>
+      </div>
+    </div>
+
+    <div class="home-footer">
+      More games coming soon &nbsp;·&nbsp; ThinkFast &nbsp;·&nbsp;
+      <a href="https://github.com">GitHub</a>
+    </div>
+
+  </div><!-- /home-container -->
+</div><!-- /home-view -->
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="assets/js/home.js"></script>
+</body>
+</html>

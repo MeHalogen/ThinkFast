@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0a0d1a"/>
+  <title>Pattern Pulse — ThinkFast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/base.css"/>
+  <link rel="stylesheet" href="../assets/css/nav.css"/>
+  <link rel="stylesheet" href="../assets/games/game-shell.css"/>
+</head>
+<body>
+<div id="app">
+
+  <!-- ── Nav ── -->
+  <nav class="tf-nav">
+    <div class="tf-nav-inner">
+      <a class="nav-brand" href="../index.html">
+        <div class="nav-logo">⚡</div>
+        <span class="nav-name">ThinkFast</span>
+      </a>
+      <div class="nav-breadcrumb">
+        <span class="nav-breadcrumb-sep">/</span>
+        <span class="nav-breadcrumb-page">Pattern Pulse</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Card ── -->
+  <div class="card-wrap">
+    <div class="card">
+
+      <!-- PRE-PLAY -->
+      <div id="preplay-screen" class="screen active">
+        <span class="pp-game-icon">⚡</span>
+        <div class="pp-game-name">Pattern Pulse</div>
+        <div class="pp-game-sub">Number Sequences</div>
+        <div class="pp-tagline">How fast can you think?</div>
+        <div class="pp-best-row">
+          🏆 Best Score &nbsp;<span class="bv" id="pp-best">—</span>
+        </div>
+        <div class="diff-pills">
+          <span class="pill pill-easy">Easy 1–3</span>
+          <span class="pill pill-medium">Medium 4–8</span>
+          <span class="pill pill-hard">Hard 9+</span>
+        </div>
+        <div class="howto">
+          <p><span>⏱</span> 10 seconds per question</p>
+          <p><span>🎯</span> Pick the missing number in the sequence</p>
+          <p><span>📈</span> Difficulty scales with your score</p>
+          <p><span>💀</span> Wrong answer or timeout ends the game</p>
+        </div>
+        <button class="cta-btn" id="play-btn">⚡ Play Now</button>
+      </div>
+
+      <!-- GAME -->
+      <div id="game-screen" class="screen">
+        <div class="header">
+          <div class="header-left">
+            <span class="header-brand">ThinkFast</span>
+            <span class="header-mode">Pattern Pulse</span>
+          </div>
+          <div class="score-badge" id="score">Score: 0</div>
+        </div>
+        <div class="diff-badge easy" id="diff-badge">
+          <div class="diff-dot"></div>
+          <span id="diff-label">Easy</span>
+        </div>
+        <div class="timer-wrap">
+          <div class="timer-label">
+            <span>TIME LEFT</span>
+            <span id="timer-count">10s</span>
+          </div>
+          <div class="timer-track">
+            <div class="timer-bar" id="timer-bar"></div>
+          </div>
+        </div>
+        <div class="question-area" id="question-area">
+          <div id="question">…</div>
+        </div>
+        <div id="options"></div>
+      </div>
+
+      <!-- GAME OVER -->
+      <div id="gameover-screen" class="screen">
+        <span class="go-emoji" id="go-emoji">💀</span>
+        <div class="go-title">Game Over</div>
+        <div class="go-sub" id="go-sub">Better luck next time!</div>
+        <div class="divider"></div>
+        <div class="scores-row">
+          <div class="score-col">
+            <div class="go-score-val" id="final-score">0</div>
+            <div class="go-label">Your Score</div>
+          </div>
+          <div style="width:1px;height:44px;background:rgba(255,255,255,0.08)"></div>
+          <div class="score-col">
+            <div class="go-best-val" id="best-score-display">0</div>
+            <div class="go-label">Best Score</div>
+          </div>
+        </div>
+        <div class="go-msg-badge" id="go-msg">Nice try! 🎯</div>
+        <div class="beat-best" id="beat-best"></div>
+        <div class="divider"></div>
+        <button class="cta-btn"   id="restart-btn">⚡ Play Again</button>
+        <button class="share-btn" id="share-btn">🔗 Share Score</button>
+        <button class="ghost-btn" id="menu-btn">← Back to ThinkFast</button>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /app -->
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="../assets/games/pattern-pulse.js"></script>
+</body>
+</html>
