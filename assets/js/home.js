@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   ThinkFast — Home Page Logic
+   CalibIQ — Home Page Logic
    ══════════════════════════════════════════ */
 
 import { initCarousel } from './carousel.js';

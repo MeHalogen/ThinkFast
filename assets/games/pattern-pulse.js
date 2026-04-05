@@ -236,7 +236,7 @@ function renderGameOver(finalScore) {
   document.getElementById('final-score').textContent        = finalScore;
   document.getElementById('best-score-display').textContent = best;
   document.getElementById('go-sub').textContent             = finalScore === 0
-    ? 'Better luck next time!'
+    ? 'Speed matters. Try again.'
     : `You answered ${finalScore} correctly.`;
 
   const bestEl = document.getElementById('best-score-display');
@@ -246,7 +246,7 @@ function renderGameOver(finalScore) {
     bestEl.classList.add('new-best');
     document.getElementById('beat-best').textContent = '🎉 New personal best!';
   } else if (best > 0) {
-    document.getElementById('beat-best').textContent = `Can you beat ${best}?`;
+    document.getElementById('beat-best').textContent = `Can you beat your best of ${best}?`;
   } else {
     document.getElementById('beat-best').textContent = '';
   }
@@ -261,11 +261,11 @@ function renderGameOver(finalScore) {
 // ── Share ────────────────────────────────────────────
 function shareScore() {
   const score = parseInt(document.getElementById('final-score').textContent, 10);
-  const text  = `I scored ${score} on Pattern Pulse 🧠⚡ — beat me!\nPlay ThinkFast: ${location.origin}`;
+  const text  = `I scored ${score} on Pattern Pulse — beat me!\nTrain on CalibIQ: ${location.origin}`;
   const btn   = document.getElementById('share-btn');
 
   if (navigator.share) {
-    navigator.share({ title: 'ThinkFast · Pattern Pulse', text }).catch(() => {});
+    navigator.share({ title: 'CalibIQ · Pattern Pulse', text }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text)
       .then(() => {

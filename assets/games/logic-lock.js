@@ -347,10 +347,10 @@ function shareScore() {
   const score  = parseInt(document.getElementById('ll-final-score').textContent, 10);
   const att    = document.getElementById('ll-stat-attempts').textContent;
   const result = document.getElementById('ll-stat-result').textContent;
-  const text   = `I scored ${score} pts on Logic Lock 🧩 (${result} in ${att} attempts) — beat me!\nPlay ThinkFast: ${location.origin}`;
+  const text   = `I scored ${score} pts on Logic Lock (${result} in ${att} attempts) — beat me!\nTrain on CalibIQ: ${location.origin}`;
   const btn    = document.getElementById('ll-share-btn');
   if (navigator.share) {
-    navigator.share({ title: 'ThinkFast · Logic Lock', text }).catch(() => {});
+    navigator.share({ title: 'CalibIQ · Logic Lock', text }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text)
       .then(() => {

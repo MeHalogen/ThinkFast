@@ -306,10 +306,10 @@ function renderGameOver() {
 function shareScore() {
   const score = parseInt(document.getElementById('rr-final-score').textContent, 10);
   const avg   = document.getElementById('rr-stat-avg').textContent;
-  const text  = `I scored ${score}/10 on Reflex Rush ⚡🎯 (avg reaction: ${avg}) — beat me!\nPlay ThinkFast: ${location.origin}`;
+  const text  = `I scored ${score}/10 on Reflex Rush (avg reaction: ${avg}) — beat me!\nTrain on CalibIQ: ${location.origin}`;
   const btn   = document.getElementById('rr-share-btn');
   if (navigator.share) {
-    navigator.share({ title: 'ThinkFast · Reflex Rush', text }).catch(() => {});
+    navigator.share({ title: 'CalibIQ · Reflex Rush', text }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text)
       .then(() => {
