@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   ThinkFast — Reflex Rush Game Logic
+   Tvara — Reflex Rush Game Logic
    ══════════════════════════════════════════ */
 
 const LS_KEY = 'tf_rr_best';
@@ -263,11 +263,11 @@ function renderGameOver() {
     : 0;
 
   const tiers = [
-    { min: 0,  emoji: '😴', msg: "Warming up! 💤" },
-    { min: 3,  emoji: '👀', msg: "Stay sharp! 👀" },
-    { min: 6,  emoji: '⚡', msg: "Good reflexes! ⚡" },
-    { min: 8,  emoji: '🔥', msg: "Quick hands! 🔥" },
-    { min: 10, emoji: '🏆', msg: "Reflex master! 🏆" },
+    { min: 0,  emoji: '⚡', msg: "Keep training. �" },
+    { min: 3,  emoji: '⚡', msg: "Stay sharp. Keep going." },
+    { min: 6,  emoji: '⚡', msg: "Good reflexes. Push further." },
+    { min: 8,  emoji: '🔥', msg: "Strong session! 🔥" },
+    { min: 10, emoji: '🏆', msg: "Elite reflexes. 🏆" },
   ];
   const tier = [...tiers].reverse().find(t => state.score >= t.min) || tiers[0];
 
@@ -276,7 +276,7 @@ function renderGameOver() {
   document.getElementById('rr-final-score').textContent = state.score;
   document.getElementById('rr-best-display').textContent = best;
   document.getElementById('rr-go-sub').textContent = state.score === 0
-    ? 'Better luck next time!'
+    ? 'Speed matters. Try again.'
     : `You hit ${state.score} of ${state.roundHits.length} targets.`;
 
   // stat row
@@ -306,10 +306,10 @@ function renderGameOver() {
 function shareScore() {
   const score = parseInt(document.getElementById('rr-final-score').textContent, 10);
   const avg   = document.getElementById('rr-stat-avg').textContent;
-  const text  = `I scored ${score}/10 on Reflex Rush (avg reaction: ${avg}) — beat me!\nTrain on CalibIQ: ${location.origin}`;
+  const text  = `I scored ${score}/10 on Reflex Rush (avg reaction: ${avg}) — beat me!\nTrain on Tvara: ${location.origin}`;
   const btn   = document.getElementById('rr-share-btn');
   if (navigator.share) {
-    navigator.share({ title: 'CalibIQ · Reflex Rush', text }).catch(() => {});
+    navigator.share({ title: 'Tvara · Reflex Rush', text }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text)
       .then(() => {

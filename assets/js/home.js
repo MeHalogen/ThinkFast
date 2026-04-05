@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   CalibIQ — Home Page Logic
+   Tvara — Home Page Logic
    ══════════════════════════════════════════ */
 
 import { initCarousel } from './carousel.js';

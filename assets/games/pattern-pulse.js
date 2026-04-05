@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   ThinkFast — Pattern Pulse Game Logic
+   Tvara — Pattern Pulse Game Logic
    ══════════════════════════════════════════ */
 
 const LS_KEY = 'tf_pp_best';
@@ -222,12 +222,12 @@ function renderGameOver(finalScore) {
   const isNew = finalScore > 0 && finalScore >= best;
 
   const tiers = [
-    { min: 0,  emoji: '💀', msg: "Keep practising! 🧠" },
-    { min: 3,  emoji: '😤', msg: "You can do better! 💪" },
-    { min: 6,  emoji: '🎯', msg: "Nice aim! 🎯" },
-    { min: 9,  emoji: '⚡', msg: "Sharp mind! ⚡" },
-    { min: 12, emoji: '🔥', msg: "On fire! 🔥" },
-    { min: 16, emoji: '🏆', msg: "Pattern master! 🏆" },
+    { min: 0,  emoji: '⚡', msg: "Keep training. 📈" },
+    { min: 3,  emoji: '⚡', msg: "Push harder. You can do better." },
+    { min: 6,  emoji: '🎯', msg: "Good session. 🎯" },
+    { min: 9,  emoji: '⚡', msg: "Sharp thinking. ⚡" },
+    { min: 12, emoji: '🔥', msg: "Strong performance. 🔥" },
+    { min: 16, emoji: '🏆', msg: "Exam-ready speed. 🏆" },
   ];
   const tier = [...tiers].reverse().find(t => finalScore >= t.min) || tiers[0];
 
@@ -261,11 +261,11 @@ function renderGameOver(finalScore) {
 // ── Share ────────────────────────────────────────────
 function shareScore() {
   const score = parseInt(document.getElementById('final-score').textContent, 10);
-  const text  = `I scored ${score} on Pattern Pulse — beat me!\nTrain on CalibIQ: ${location.origin}`;
+  const text  = `I scored ${score} on Pattern Pulse — beat me!\nTrain on Tvara: ${location.origin}`;
   const btn   = document.getElementById('share-btn');
 
   if (navigator.share) {
-    navigator.share({ title: 'CalibIQ · Pattern Pulse', text }).catch(() => {});
+    navigator.share({ title: 'Tvara · Pattern Pulse', text }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text)
       .then(() => {

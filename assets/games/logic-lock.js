@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   ThinkFast — Logic Lock Game Logic
+   Tvara — Logic Lock Game Logic
    Mastermind-style 4-digit code breaker
    ══════════════════════════════════════════ */
 
@@ -291,18 +291,18 @@ function renderGameOver(won, score) {
 
   const winTiers = [
     { min: 1, emoji: '🧩', msg: "Code cracked! 🧩" },
-    { min: 4, emoji: '🔥', msg: "Sharp logic! 🔥" },
-    { min: 6, emoji: '⚡', msg: "Lightning fast! ⚡" },
-    { min: 8, emoji: '🏆', msg: "Perfect solve! 🏆" },
+    { min: 4, emoji: '🔥', msg: "Sharp logic. 🔥" },
+    { min: 6, emoji: '⚡', msg: "Fast deduction. ⚡" },
+    { min: 8, emoji: '🏆', msg: "Perfect solve. 🏆" },
   ];
-  const loseTier = { emoji: '💀', msg: "The code wins this time! 🔒" };
+  const loseTier = { emoji: '⚡', msg: "Speed matters. Train again. 🔒" };
   const tier = won
     ? ([...winTiers].reverse().find(t => score >= t.min) || winTiers[0])
     : loseTier;
 
   document.getElementById('ll-go-emoji').textContent = tier.emoji;
   document.getElementById('ll-go-msg').textContent   = tier.msg;
-  document.getElementById('ll-go-title').textContent = won ? 'Code Cracked!' : 'Game Over';
+  document.getElementById('ll-go-title').textContent = won ? 'Code Cracked!' : 'Session Complete';
   document.getElementById('ll-go-sub').textContent   = won
     ? `Solved in ${state.attempts} attempt${state.attempts > 1 ? 's' : ''}!`
     : `The code was ${state.secret.join(' - ')}.`;
@@ -347,10 +347,10 @@ function shareScore() {
   const score  = parseInt(document.getElementById('ll-final-score').textContent, 10);
   const att    = document.getElementById('ll-stat-attempts').textContent;
   const result = document.getElementById('ll-stat-result').textContent;
-  const text   = `I scored ${score} pts on Logic Lock (${result} in ${att} attempts) — beat me!\nTrain on CalibIQ: ${location.origin}`;
+  const text   = `I scored ${score} pts on Logic Lock (${result} in ${att} attempts) — beat me!\nTrain on Tvara: ${location.origin}`;
   const btn    = document.getElementById('ll-share-btn');
   if (navigator.share) {
-    navigator.share({ title: 'CalibIQ · Logic Lock', text }).catch(() => {});
+    navigator.share({ title: 'Tvara · Logic Lock', text }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text)
       .then(() => {
