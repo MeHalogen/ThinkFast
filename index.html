@@ -41,8 +41,7 @@
     <p class="landing-subtitle">How fast is your brain, really?</p>
     <p class="landing-desc">Precision drills for pattern recognition, reaction, and logic. Under 90 seconds. No account needed.</p>
     <button class="landing-enter-btn" id="landing-enter-btn">Start your first challenge&nbsp;→</button>
-    <p class="landing-microcopy">⚡ Instant play &nbsp;·&nbsp; No signup required</p>
-    <div class="landing-footer">by Tvara Labs &nbsp;·&nbsp; Beta</div>
+    <p class="landing-microcopy">⚡ <span id="landing-counter">128</span> people training right now</p>
   </div>
 </div>
 
@@ -77,27 +76,24 @@
       <div class="hero-eyebrow">Pattern Recognition · Reaction Speed · Logical Thinking</div>
       <h1 class="hero-headline">How fast is your<br><em>brain, really?</em></h1>
       <p class="hero-tagline">Precision drills that expose every gap in your speed — pattern recognition, reaction, and logic. Under 90 seconds. No account needed.</p>
+
+      <!-- ── Mini challenge widget ── -->
+      <div class="hq-widget" id="hq-widget">
+        <div class="hq-sequence" id="hq-sequence">16 &rarr; 25 &rarr; 36 &rarr; <span class="hq-blank">?</span></div>
+        <div class="hq-options" id="hq-options">
+          <button class="hq-opt" data-correct="true">49</button>
+          <button class="hq-opt">48</button>
+          <button class="hq-opt">52</button>
+          <button class="hq-opt">50</button>
+        </div>
+        <div class="hq-feedback" id="hq-feedback" aria-live="polite"></div>
+      </div>
+
       <div class="hero-cta-row">
         <button class="hero-cta-btn" id="hero-play-btn">Start your first challenge →</button>
         <button class="hero-cta-ghost">See all modules ↓</button>
       </div>
-      <p class="hero-microcopy">⚡ Instant play &nbsp;·&nbsp; No signup required</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-val">8</span>
-          <span class="stat-lbl">Pattern Types</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-val">3</span>
-          <span class="stat-lbl">Difficulty Tiers</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-val">10s</span>
-          <span class="stat-lbl">Per Question</span>
-        </div>
-      </div>
+      <p class="hero-microcopy">⚡ <span id="hero-counter">128</span> people training right now</p>
     </div>
 
     <!-- Training Modules section -->

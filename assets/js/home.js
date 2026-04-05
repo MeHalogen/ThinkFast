@@ -15,6 +15,92 @@ function getBest(key) {
   return parseInt(localStorage.getItem(key) || '0', 10);
 }
 
+/* ── Live activity counter ── */
+function initLiveCounter() {
+  const els = [
+    document.getElementById('hero-counter'),
+    document.getElementById('landing-counter'),
+  ].filter(Boolean);
+  if (!els.length) return;
+
+  // Seed a random base in range so different visitors see slightly different numbers
+  let count = 118 + Math.floor(Math.random() * 24); // 118–141
+
+  function update(el) {
+    el.textContent = count;
+  }
+  els.forEach(update);
+
+  setInterval(() => {
+    // Drift ±1 or ±2, bias slightly upward, clamp to 110–155
+    const delta = Math.random() < 0.6 ? 1 : (Math.random() < 0.5 ? 2 : -1);
+    count = Math.min(155, Math.max(110, count + delta));
+    els.forEach(el => {
+      el.style.opacity = '0';
+      setTimeout(() => {
+        el.textContent = count;
+        el.style.opacity = '1';
+      }, 150);
+    });
+  }, 3800 + Math.random() * 1400); // 3.8–5.2s interval
+}
+
+/* ── Hero mini quiz ── */
+function initHeroQuiz() {
+  const widget = document.getElementById('hq-widget');
+  if (!widget) return;
+
+  const opts     = widget.querySelectorAll('.hq-opt');
+  const feedback = document.getElementById('hq-feedback');
+  const blank    = widget.querySelector('.hq-blank');
+
+  opts.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      // Already answered
+      if (widget.dataset.answered) return;
+      widget.dataset.answered = '1';
+
+      // Ripple effect
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x    = (e.clientX || rect.left + rect.width / 2) - rect.left - size / 2;
+      const y    = (e.clientY || rect.top + rect.height / 2) - rect.top - size / 2;
+      const rpl  = document.createElement('span');
+      rpl.className = 'hq-ripple';
+      rpl.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px`;
+      btn.appendChild(rpl);
+      setTimeout(() => rpl.remove(), 400);
+
+      const isCorrect = btn.dataset.correct === 'true';
+
+      // Style all buttons
+      opts.forEach(o => {
+        o.disabled = true;
+        if (o.dataset.correct === 'true') {
+          o.classList.add('correct');
+        } else if (o === btn && !isCorrect) {
+          o.classList.add('wrong');
+        } else {
+          o.classList.add('dimmed');
+        }
+      });
+
+      // Reveal answer in sequence
+      if (blank) blank.textContent = '49';
+      if (blank) blank.classList.add('revealed');
+
+      // Feedback
+      feedback.className = 'hq-feedback ' + (isCorrect ? 'fb-correct' : 'fb-wrong');
+      feedback.textContent = isCorrect
+        ? "✓ You're faster than 68% of people."
+        : '✗ Close. The answer is 49 — perfect squares.';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => feedback.classList.add('show'));
+      });
+    });
+  });
+}
+
 function refreshHomeBests() {
   // Pattern Pulse
   const ppBest = getBest(LS_PP);
@@ -76,6 +162,8 @@ function init() {
   }
 
   refreshHomeBests();
+  initLiveCounter();
+  initHeroQuiz();
 
   // Hero CTA → Pattern Pulse
   const heroBtn = document.getElementById('hero-play-btn');
