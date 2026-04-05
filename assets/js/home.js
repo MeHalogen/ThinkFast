@@ -157,15 +157,12 @@ function init() {
     document.dispatchEvent(new CustomEvent('tvara:start-session'));
   });
 
-  // Landing enter button → dismiss splash + open session simultaneously
+  // Landing enter button → dismiss splash, show home page
   const landingEnterBtn = document.getElementById('landing-enter-btn');
   const landingView2    = document.getElementById('landing-view');
   const homeView2       = document.getElementById('home-view');
   if (landingEnterBtn && landingView2 && homeView2) {
     landingEnterBtn.addEventListener('click', () => {
-      // Fire session immediately — overlay sits above everything
-      document.dispatchEvent(new CustomEvent('tvara:start-session'));
-      // Dismiss splash in parallel (cosmetic only)
       landingView2.classList.add('landing-exit');
       setTimeout(() => {
         landingView2.style.display = 'none';
