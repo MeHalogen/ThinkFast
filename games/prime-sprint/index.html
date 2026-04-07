@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0a0d1a"/>
+  <title>Prime Sprint — Tvara</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN4RX93M39"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZN4RX93M39');
+  </script>
+  <!-- Favicons & PWA -->
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16x16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png"/>
+  <link rel="manifest" href="../../assets/site.webmanifest"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../assets/css/base.css"/>
+  <link rel="stylesheet" href="../../assets/css/nav.css"/>
+  <link rel="stylesheet" href="../../assets/games/game-shell.css"/>
+  <link rel="stylesheet" href="../../assets/games/prime-sprint.css"/>
+</head>
+<body>
+<div id="ps-app">
+
+  <nav class="tf-nav">
+    <div class="tf-nav-inner">
+      <a class="nav-brand" href="/">
+        <div class="nav-logo">
+          <img src="../../assets/favicon2.png" alt="Tvara logo" class="nav-logo-img"/>
+        </div>
+        <span class="nav-name">Tvara</span>
+      </a>
+      <div class="nav-breadcrumb">
+        <span class="nav-breadcrumb-sep">/</span>
+        <span class="nav-breadcrumb-page">Prime Sprint</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="ps-wrap">
+    <div class="card">
+
+      <!-- PRE-PLAY -->
+      <div id="ps-preplay">
+        <span class="ps-game-icon">⚡</span>
+        <div class="ps-game-name">Prime Sprint</div>
+        <div class="ps-game-sub">Mental Math</div>
+        <div class="ps-tagline">Decide fast: is the number prime or composite?</div>
+        <div class="ps-best-row">🏆 Best Score &nbsp;<span class="bv" id="ps-best">—</span></div>
+
+        <div class="ps-howto">
+          <p><span>⏱️</span> <span>45 seconds. Answer as many as you can.</span></p>
+          <p><span>🎯</span> <span>Prime vs Composite (1 is neither).</span></p>
+          <p><span>🔥</span> <span>Streak multiplier builds when you’re correct.</span></p>
+        </div>
+
+        <button class="ps-cta-btn" id="ps-play-btn">Start Sprint</button>
+      </div>
+
+      <!-- GAME -->
+      <div id="ps-game" style="display:none">
+        <div class="ps-header">
+          <div class="ps-header-left">
+            <span class="ps-header-brand">Tvara</span>
+            <span class="ps-header-mode">Prime Sprint</span>
+          </div>
+          <div class="ps-score-badge" id="ps-score-badge">0</div>
+        </div>
+
+        <div class="ps-meta">
+          <div class="ps-chip">Streak <span id="ps-streak">0</span></div>
+          <div class="ps-chip">× <span id="ps-mult">1</span></div>
+          <div class="ps-chip ps-time">Time <span id="ps-time">45</span>s</div>
+        </div>
+
+        <div class="ps-timer-wrap">
+          <div class="ps-timer-bar" id="ps-timer-bar" style="width:100%"></div>
+        </div>
+
+        <div class="ps-number" id="ps-number">—</div>
+
+        <div class="ps-actions">
+          <button class="ps-btn ps-btn-prime" id="ps-prime">Prime</button>
+          <button class="ps-btn ps-btn-comp" id="ps-composite">Composite</button>
+          <button class="ps-btn ps-btn-neither" id="ps-neither">Neither (1)</button>
+        </div>
+
+        <div class="ps-inline" id="ps-inline" aria-live="polite"></div>
+      </div>
+
+      <!-- GAME OVER -->
+      <div id="ps-gameover" style="display:none">
+        <span class="ps-go-emoji" id="ps-go-emoji">⚡</span>
+        <div class="ps-go-title">Sprint Complete</div>
+        <div class="ps-go-sub" id="ps-go-sub">45 seconds of focus.</div>
+        <div class="ps-divider"></div>
+
+        <div class="ps-scores-row">
+          <div class="ps-score-col">
+            <div class="ps-go-score-val" id="ps-final-score">0</div>
+            <div class="ps-go-label">Score</div>
+          </div>
+          <div style="width:1px;height:44px;background:rgba(255,255,255,0.08)"></div>
+          <div class="ps-score-col">
+            <div class="ps-go-best-val" id="ps-best-display">0</div>
+            <div class="ps-go-label">Best Score</div>
+          </div>
+        </div>
+
+        <div class="ps-beat-best" id="ps-beat-best"></div>
+
+        <button class="ps-share-btn" id="ps-share-btn">🔗 Share Score</button>
+        <div class="ps-go-actions">
+          <button class="ps-restart-btn" id="ps-restart-btn">Retry</button>
+          <button class="ps-menu-btn" id="ps-menu-btn">← Tvara</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script type="module" src="../../assets/js/common.js"></script>
+<script type="module" src="../../assets/games/prime-sprint.js"></script>
+</body>
+</html>
+

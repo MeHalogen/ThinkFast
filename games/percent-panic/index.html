@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0a0d1a"/>
+  <title>Percent Panic — Tvara</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZN4RX93M39"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZN4RX93M39');
+  </script>
+  <!-- Favicons & PWA -->
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16x16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png"/>
+  <link rel="manifest" href="../../assets/site.webmanifest"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../assets/css/base.css"/>
+  <link rel="stylesheet" href="../../assets/css/nav.css"/>
+  <link rel="stylesheet" href="../../assets/games/game-shell.css"/>
+  <link rel="stylesheet" href="../../assets/games/percent-panic.css"/>
+</head>
+<body>
+<div id="pc-app">
+
+  <nav class="tf-nav">
+    <div class="tf-nav-inner">
+      <a class="nav-brand" href="/">
+        <div class="nav-logo">
+          <img src="../../assets/favicon2.png" alt="Tvara logo" class="nav-logo-img"/>
+        </div>
+        <span class="nav-name">Tvara</span>
+      </a>
+      <div class="nav-breadcrumb">
+        <span class="nav-breadcrumb-sep">/</span>
+        <span class="nav-breadcrumb-page">Percent Panic</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pc-wrap">
+    <div class="card">
+
+      <!-- PRE-PLAY -->
+      <div id="pc-preplay">
+        <span class="pc-game-icon">📈</span>
+        <div class="pc-game-name">Percent Panic</div>
+        <div class="pc-game-sub">Mental Math</div>
+        <div class="pc-tagline">Discounts, ratios, and percentages — under the clock.</div>
+        <div class="pc-best-row">🏆 Best Streak &nbsp;<span class="bv" id="pc-best">—</span></div>
+
+        <div class="pc-howto">
+          <p><span>⏱️</span> <span>Answer quickly. Each question has a short timer.</span></p>
+          <p><span>🔥</span> <span>Streak grows with correct answers. One mistake ends the run.</span></p>
+          <p><span>🎯</span> <span>Trains exam-style percentage shortcuts.</span></p>
+        </div>
+
+        <button class="pc-cta-btn" id="pc-play-btn">Start</button>
+      </div>
+
+      <!-- GAME -->
+      <div id="pc-game" style="display:none">
+        <div class="pc-header">
+          <div class="pc-header-left">
+            <span class="pc-header-brand">Tvara</span>
+            <span class="pc-header-mode">Percent Panic</span>
+          </div>
+          <div class="pc-streak-badge">Streak <span id="pc-streak">0</span></div>
+        </div>
+
+        <div class="pc-timer-wrap">
+          <div class="pc-timer-bar" id="pc-timer-bar" style="width:100%"></div>
+        </div>
+
+        <div class="pc-question" id="pc-question">—</div>
+        <div class="pc-options" id="pc-options"></div>
+
+        <div class="pc-inline" id="pc-inline" aria-live="polite"></div>
+      </div>
+
+      <!-- GAME OVER -->
+      <div id="pc-gameover" style="display:none">
+        <span class="pc-go-emoji">📈</span>
+        <div class="pc-go-title">Run Over</div>
+        <div class="pc-go-sub" id="pc-go-sub">Mental math under pressure.</div>
+        <div class="pc-divider"></div>
+
+        <div class="pc-scores-row">
+          <div class="pc-score-col">
+            <div class="pc-go-score-val" id="pc-final-streak">0</div>
+            <div class="pc-go-label">Streak</div>
+          </div>
+          <div style="width:1px;height:44px;background:rgba(255,255,255,0.08)"></div>
+          <div class="pc-score-col">
+            <div class="pc-go-best-val" id="pc-best-display">0</div>
+            <div class="pc-go-label">Best Streak</div>
+          </div>
+        </div>
+
+        <div class="pc-beat-best" id="pc-beat-best"></div>
+        <button class="pc-share-btn" id="pc-share-btn">🔗 Share Score</button>
+        <div class="pc-go-actions">
+          <button class="pc-restart-btn" id="pc-restart-btn">Retry</button>
+          <button class="pc-menu-btn" id="pc-menu-btn">← Tvara</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script type="module" src="../../assets/js/common.js"></script>
+<script type="module" src="../../assets/games/percent-panic.js"></script>
+</body>
+</html>
+

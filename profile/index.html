@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0a0d1a"/>
+  <title>Profile & Settings — Tvara</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png"/>
+  <link rel="manifest" href="../assets/site.webmanifest"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/base.css"/>
+  <link rel="stylesheet" href="../assets/css/nav.css"/>
+  <link rel="stylesheet" href="../assets/css/profile.css"/>
+</head>
+<body>
+  <nav class="tf-nav">
+    <div class="tf-nav-inner">
+      <a class="nav-brand" href="/">
+        <div class="nav-logo">
+          <img src="../assets/favicon2.png" alt="Tvara logo" class="nav-logo-img"/>
+        </div>
+        <span class="nav-name">Tvara</span>
+      </a>
+      <div class="nav-breadcrumb">
+        <span class="nav-breadcrumb-sep">/</span>
+        <span class="nav-breadcrumb-page">Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pf-wrap">
+    <section class="pf-hero">
+      <div class="pf-title">Profile & Settings</div>
+      <div class="pf-sub">No account needed. Your progress lives on this device — you can rename yourself, export/import, or reset anytime.</div>
+    </section>
+
+    <section class="pf-grid">
+      <div class="pf-card">
+        <h2>Your profile</h2>
+        <div class="pf-row">
+          <input class="pf-input" id="pf-name" placeholder="Username" maxlength="24" />
+          <button class="pf-btn pf-btn-primary" id="pf-save-name">Save</button>
+        </div>
+        <div class="pf-kv">
+          <div class="k">Streak</div><div class="v" id="pf-streak">—</div>
+          <div class="k">Best (session)</div><div class="v" id="pf-best">—</div>
+          <div class="k">Last played</div><div class="v" id="pf-last">—</div>
+        </div>
+        <div class="pf-help">Tip: use a name you’re comfortable sharing in screenshots.</div>
+      </div>
+
+      <div class="pf-card">
+        <h2>Experience</h2>
+
+        <div class="pf-toggle">
+          <div>
+            <label for="pf-reduced-motion">Reduced motion</label>
+            <div class="desc">Less animation. Helpful for motion sensitivity.</div>
+          </div>
+          <input type="checkbox" id="pf-reduced-motion"/>
+        </div>
+
+        <div class="pf-toggle">
+          <div>
+            <label for="pf-sound">Sound</label>
+            <div class="desc">Enable sound effects (where available).</div>
+          </div>
+          <input type="checkbox" id="pf-sound"/>
+        </div>
+      </div>
+
+      <div class="pf-card">
+        <h2>Backup & transfer</h2>
+        <div class="pf-row">
+          <button class="pf-btn" id="pf-export">Export data</button>
+          <button class="pf-btn" id="pf-copy-export">Copy export</button>
+        </div>
+        <textarea class="pf-textarea" id="pf-export-box" spellcheck="false" placeholder="Your export will appear here…"></textarea>
+        <div class="pf-help">You can paste this export on another device using Import.</div>
+        <div class="pf-row" style="margin-top:10px;">
+          <button class="pf-btn pf-btn-primary" id="pf-import">Import data</button>
+        </div>
+      </div>
+
+      <div class="pf-card">
+        <h2>Danger zone</h2>
+        <div class="pf-help">This clears your local profile and all personal best scores on this device.</div>
+        <div class="pf-row" style="margin-top:10px;">
+          <button class="pf-btn pf-btn-danger" id="pf-reset">Reset all data</button>
+        </div>
+      </div>
+
+      <div class="pf-card" id="pf-devtools" style="display:none">
+        <h2>Dev tools</h2>
+        <div class="pf-help">Runs a safe export → reset → import verification and then restores your original data.</div>
+        <div class="pf-row" style="margin-top:10px;">
+          <button class="pf-btn" id="pf-selftest">Run self-test</button>
+        </div>
+        <textarea class="pf-textarea" id="pf-selftest-log" spellcheck="false" readonly placeholder="Self-test output will appear here…"></textarea>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script type="module" src="../assets/js/common.js"></script>
+  <script type="module" src="../assets/js/profile.js"></script>
+</body>
+</html>

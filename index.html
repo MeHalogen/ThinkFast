@@ -104,13 +104,29 @@
     <!-- Training Modules section -->
     <div class="section-header">
       <span class="section-title">Training Modules</span>
-      <span class="section-count">6 active</span>
+      <span class="section-count">8 active</span>
+    </div>
+
+    <!-- Tracks (turn modules into a platform) -->
+    <div class="tracks" id="tracks">
+      <div class="tracks-head">
+        <div class="tracks-title">Tracks</div>
+        <div class="tracks-sub">Pick a focus — Tvara will highlight the best drills.</div>
+      </div>
+      <div class="tracks-pills" role="tablist" aria-label="Training tracks">
+        <button class="track-pill active" data-track="all" role="tab" aria-selected="true">All</button>
+        <button class="track-pill" data-track="math" role="tab" aria-selected="false">Mental Math</button>
+        <button class="track-pill" data-track="speed" role="tab" aria-selected="false">Speed</button>
+        <button class="track-pill" data-track="logic" role="tab" aria-selected="false">Logic</button>
+        <button class="track-pill" data-track="memory" role="tab" aria-selected="false">Memory</button>
+        <button class="track-pill" data-track="words" role="tab" aria-selected="false">Words</button>
+      </div>
     </div>
 
     <div class="games-grid">
 
         <!-- Pattern Pulse — ACTIVE -->
-        <div class="game-card gc-pulse" id="card-pulse">
+        <div class="game-card gc-pulse" id="card-pulse" data-track="speed">
           <div class="card-top">
             <span class="card-icon">⚡</span>
             <span class="card-status status-live">Active</span>
@@ -130,7 +146,7 @@
         </div>
 
         <!-- Reflex Rush — ACTIVE -->
-        <div class="game-card gc-reflex" id="card-reflex">
+        <div class="game-card gc-reflex" id="card-reflex" data-track="speed">
           <div class="card-top">
             <span class="card-icon">🎯</span>
             <span class="card-status status-live">Active</span>
@@ -150,7 +166,7 @@
         </div>
 
         <!-- Logic Lock — ACTIVE -->
-        <div class="game-card gc-logic" id="card-logic">
+        <div class="game-card gc-logic" id="card-logic" data-track="logic">
           <div class="card-top">
             <span class="card-icon">🧩</span>
             <span class="card-status status-live">Active</span>
@@ -170,7 +186,7 @@
         </div>
 
         <!-- Memory Grid — ACTIVE -->
-        <div class="game-card gc-memory" id="card-memory">
+        <div class="game-card gc-memory" id="card-memory" data-track="memory">
           <div class="card-top">
             <span class="card-icon">🧠</span>
             <span class="card-status status-live">Active</span>
@@ -190,7 +206,7 @@
         </div>
 
         <!-- Speed Math — ACTIVE -->
-        <div class="game-card gc-speedmath" id="card-speedmath">
+        <div class="game-card gc-speedmath" id="card-speedmath" data-track="math">
           <div class="card-top">
             <span class="card-icon">🔢</span>
             <span class="card-status status-live">Active</span>
@@ -210,7 +226,7 @@
         </div>
 
         <!-- Word Scramble — ACTIVE -->
-        <div class="game-card gc-wordscramble" id="card-wordscramble">
+        <div class="game-card gc-wordscramble" id="card-wordscramble" data-track="words">
           <div class="card-top">
             <span class="card-icon">🔤</span>
             <span class="card-status status-live">Active</span>
@@ -226,6 +242,46 @@
               <span class="card-best" id="home-ws-chip">🏆 <span id="home-ws-best">—</span></span>
             </div>
             <button class="card-play-btn gc-wordscramble-btn">Train ›</button>
+          </div>
+        </div>
+
+        <!-- Prime Sprint — ACTIVE -->
+        <div class="game-card gc-prime" id="card-prime" data-track="math">
+          <div class="card-top">
+            <span class="card-icon">⚡</span>
+            <span class="card-status status-live">Active</span>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Prime Sprint</div>
+            <div class="card-desc">Prime or composite? Decide fast and build a streak multiplier.</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-meta">
+              <span class="meta-chip gc-speedmath-chip">Mental Math</span>
+              <span class="meta-chip gc-speedmath-chip">45s</span>
+              <span class="card-best" id="home-ps-chip">🏆 <span id="home-ps-best">—</span></span>
+            </div>
+            <button class="card-play-btn gc-speedmath-btn">Train ›</button>
+          </div>
+        </div>
+
+        <!-- Percent Panic — ACTIVE -->
+        <div class="game-card gc-percent" id="card-percent" data-track="math">
+          <div class="card-top">
+            <span class="card-icon">📈</span>
+            <span class="card-status status-live">Active</span>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Percent Panic</div>
+            <div class="card-desc">Percent shortcuts, discounts, and increases — under the clock.</div>
+          </div>
+          <div class="card-footer">
+            <div class="card-meta">
+              <span class="meta-chip gc-memory-chip">Mental Math</span>
+              <span class="meta-chip gc-memory-chip">Streak</span>
+              <span class="card-best" id="home-pc-chip">🏆 <span id="home-pc-best">—</span></span>
+            </div>
+            <button class="card-play-btn gc-memory-btn">Train ›</button>
           </div>
         </div>
 
@@ -254,7 +310,7 @@
     <!-- Stat bar -->
     <div class="stat-bar">
       <div class="stat-bar-item">
-        <span class="stat-bar-val">6</span>
+        <span class="stat-bar-val">8</span>
         <span class="stat-bar-key">Training modules</span>
       </div>
       <div class="stat-bar-div"></div>
@@ -333,6 +389,7 @@
 
 </div>
 
+<script type="module" src="assets/js/common.js"></script>
 <script type="module" src="assets/js/home.js"></script>
 <script type="module" src="assets/js/session.js"></script>
 </body>

@@ -1,0 +1,154 @@
+/* ══════════════════════════════════════════
+   Tvara — Profile / Settings page
+   ══════════════════════════════════════════ */
+
+.pf-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 26px 20px 80px;
+}
+
+.pf-hero {
+  padding: 18px 18px;
+  border-radius: var(--r-2xl);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.pf-title {
+  font-size: 1.8rem;
+  letter-spacing: -0.6px;
+  font-weight: 850;
+}
+
+.pf-sub {
+  margin-top: 8px;
+  color: #94a3b8;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.pf-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 860px) {
+  .pf-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.pf-card {
+  padding: 16px 16px;
+  border-radius: var(--r-2xl);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.pf-card h2 {
+  font-size: 1.05rem;
+  letter-spacing: -0.2px;
+  margin-bottom: 10px;
+}
+
+.pf-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pf-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: #e2e8f0;
+  outline: none;
+  font-weight: 700;
+}
+.pf-input:focus {
+  border-color: rgba(129,140,248,0.55);
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.14);
+}
+
+.pf-btn {
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: #e2e8f0;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+.pf-btn:hover { background: rgba(255,255,255,0.09); }
+.pf-btn:active { transform: translateY(1px); }
+
+.pf-btn-primary {
+  background: linear-gradient(135deg, rgba(99,102,241,0.85), rgba(96,165,250,0.85));
+  border-color: rgba(255,255,255,0.16);
+}
+.pf-btn-primary:hover { background: linear-gradient(135deg, rgba(99,102,241,0.95), rgba(96,165,250,0.95)); }
+
+.pf-btn-danger {
+  background: rgba(239,68,68,0.12);
+  border-color: rgba(239,68,68,0.30);
+  color: #fecaca;
+}
+.pf-btn-danger:hover { background: rgba(239,68,68,0.18); }
+
+.pf-kv {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.92rem;
+}
+.pf-kv .k { color: #94a3b8; font-weight: 750; }
+.pf-kv .v { color: #e2e8f0; font-weight: 800; }
+
+.pf-help {
+  margin-top: 10px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.pf-textarea {
+  width: 100%;
+  min-height: 160px;
+  margin-top: 10px;
+  padding: 12px 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: #e2e8f0;
+  outline: none;
+  font-weight: 650;
+  resize: vertical;
+}
+
+.pf-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.pf-toggle:first-of-type { border-top: none; padding-top: 0; }
+.pf-toggle label {
+  font-weight: 800;
+  color: #e2e8f0;
+}
+.pf-toggle .desc {
+  color: #94a3b8;
+  font-weight: 650;
+  font-size: 0.88rem;
+  margin-top: 4px;
+}
+

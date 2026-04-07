@@ -1,18 +1,5 @@
-/* ═══════════════════════════════.nav-logo {
-  height: 48px;
-  width: 48px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 10px;
-}
-.nav-logo-img {
-  height: 350%;
-  width: auto;
-  object-fit: cover;
-  object-position: 15% center;
-  display: block;
-}Tvara — Shared Nav Component
+/* ══════════════════════════════════════════
+   Tvara — Shared Nav Component
    Used by: index.html + all games/*.html
    ══════════════════════════════════════════ */
 
