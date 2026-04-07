@@ -42,6 +42,13 @@ function render() {
 
   // Apply reduced motion immediately for this page
   document.documentElement.dataset.reduceMotion = settings.reducedMotion ? '1' : '';
+
+  // Mark active theme swatch
+  const swatchWrap = document.getElementById('pf-theme-swatches');
+  if (swatchWrap) {
+    const active = settings.theme || 'purple';
+    swatchWrap.querySelectorAll('.pf-theme-swatch').forEach(b => b.classList.toggle('active', b.dataset.theme === active));
+  }
 }
 
 function shouldShowDevTools() {
@@ -244,6 +251,22 @@ function bind() {
 
   if (rm) rm.addEventListener('change', () => { persistSettings(); toast('Updated.'); });
   if (sound) sound.addEventListener('change', () => { persistSettings(); toast('Updated.'); });
+
+  // Theme swatches
+  const swatchWrap = document.getElementById('pf-theme-swatches');
+  if (swatchWrap) {
+    swatchWrap.addEventListener('click', (e) => {
+      const btn = e.target.closest('.pf-theme-swatch');
+      if (!btn) return;
+      const theme = btn.dataset.theme;
+      const s = loadSettings();
+      s.theme = theme;
+      saveSettings(s);
+      document.documentElement.dataset.theme = theme;
+      swatchWrap.querySelectorAll('.pf-theme-swatch').forEach(b => b.classList.toggle('active', b.dataset.theme === theme));
+      toast('Theme updated.');
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

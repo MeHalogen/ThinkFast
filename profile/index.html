@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../assets/css/base.css"/>
   <link rel="stylesheet" href="../assets/css/nav.css"/>
   <link rel="stylesheet" href="../assets/css/profile.css"/>
+  <script>try{var s=JSON.parse(localStorage.getItem("tvara_settings")||"{}");if(s.theme)document.documentElement.dataset.theme=s.theme;}catch(_){}</script>
 </head>
 <body>
   <nav class="tf-nav">
@@ -69,6 +70,16 @@
             <div class="desc">Enable sound effects (where available).</div>
           </div>
           <input type="checkbox" id="pf-sound"/>
+        </div>
+
+        <div class="pf-theme-row">
+          <div class="pf-theme-label">Theme</div>
+          <div class="pf-theme-swatches" id="pf-theme-swatches">
+            <button class="pf-theme-swatch" data-theme="purple" title="Purple" style="background:linear-gradient(135deg,#1e1b4b,#6366f1)"></button>
+            <button class="pf-theme-swatch" data-theme="blue"   title="Blue"   style="background:linear-gradient(135deg,#0c1a3a,#3b82f6)"></button>
+            <button class="pf-theme-swatch" data-theme="black"  title="Black"  style="background:linear-gradient(135deg,#111,#333)"></button>
+            <button class="pf-theme-swatch" data-theme="green"  title="Green"  style="background:linear-gradient(135deg,#052e16,#16a34a)"></button>
+          </div>
         </div>
       </div>
 

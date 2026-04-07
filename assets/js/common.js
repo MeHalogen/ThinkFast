@@ -31,6 +31,11 @@ function ensureFooter() {
 
 document.addEventListener('DOMContentLoaded', () => {
   ensureFooter();
+  // Apply saved theme
+  try {
+    const s = JSON.parse(localStorage.getItem('tvara_settings') || '{}');
+    if (s.theme) document.documentElement.dataset.theme = s.theme;
+  } catch (_) {}
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(() => {});
   }

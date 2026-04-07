@@ -48,6 +48,30 @@ body {
   overflow-x: hidden;
 }
 
+/* ── Theme overrides ── */
+[data-theme="purple"] body {
+  background: radial-gradient(ellipse at 50% -10%, #1e1b4b 0%, #0a0d1a 60%);
+}
+[data-theme="blue"] body {
+  background: radial-gradient(ellipse at 50% -10%, #0c1a3a 0%, #060c1a 60%);
+}
+[data-theme="blue"] {
+  --indigo: #3b82f6;
+  --purple: #60a5fa;
+  --blue:   #93c5fd;
+}
+[data-theme="black"] body {
+  background: #0a0a0a;
+}
+[data-theme="green"] body {
+  background: radial-gradient(ellipse at 50% -10%, #052e16 0%, #070d09 60%);
+}
+[data-theme="green"] {
+  --indigo: #16a34a;
+  --purple: #22c55e;
+  --blue:   #4ade80;
+}
+
 /* ── Footer (injected by common.js) ── */
 .tf-footer {
   width: 100%;

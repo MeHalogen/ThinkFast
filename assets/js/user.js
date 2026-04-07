@@ -87,7 +87,7 @@ export function loadSettings() {
     const raw = localStorage.getItem(SETTINGS_KEY);
     if (raw) return JSON.parse(raw);
   } catch (_) {}
-  const fresh = { reducedMotion: false, sound: true };
+  const fresh = { reducedMotion: false, sound: true, theme: 'purple' };
   saveSettings(fresh);
   return fresh;
 }
