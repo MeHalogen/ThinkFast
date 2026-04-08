@@ -180,10 +180,10 @@ function pickQuestions() {
 ───────────────────────────────────────── */
 function showOverlay() {
   overlay.classList.remove('ms-hidden');
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    overlay.classList.add('ms-visible');
-    document.body.style.overflow = 'hidden';
-  }));
+  // Force reflow so transition fires
+  void overlay.offsetHeight;
+  overlay.classList.add('ms-visible');
+  document.body.style.overflow = 'hidden';
 }
 
 function hideOverlay() {
@@ -435,6 +435,14 @@ function resetMock() {
 /* ─────────────────────────────────────────
    Boot
 ───────────────────────────────────────── */
+
+// Register event listener immediately (not inside DOMContentLoaded)
+// so it's available as soon as the module is parsed
+document.addEventListener('tvara:start-mock', () => {
+  if (!overlay) return; // DOM not ready yet — shouldn't happen but safe
+  startMock();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   overlay       = document.getElementById('ms-overlay');
   questionView  = document.getElementById('ms-question-view');
@@ -450,9 +458,6 @@ document.addEventListener('DOMContentLoaded', () => {
   mBackBtn      = document.getElementById('ms-back');
 
   if (!overlay) return;
-
-  // Triggered from home page card
-  document.addEventListener('tvara:start-mock', startMock);
 
   mBackBtn.addEventListener('click', () => { resetMock(); hideOverlay(); });
 
